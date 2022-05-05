@@ -2,18 +2,16 @@
 
 #include <iostream>
 
+#include <cmath>
+
 #include <chrono>
 
 extern "C" void c_cos(int n_, double * x_p, double * y_p)
 {
-    auto start = std::chrono::steady_clock::now();
-
     Vector x(Eigen::Map<Vector>(x_p,n_));
-    Vector y(Eigen::Map<Vector>(x_p,n_));
+    Vector y(Eigen::Map<Vector>(y_p,n_));
+    
+    y = Eigen::cos(x.array());
 
-    std::cout << x << std::endl;
-
-
-    std::chrono::duration<double> elapsed_seconds = std::chrono::steady_clock::now()-start;
-    std::cout << "run time: " << elapsed_seconds.count() << "s\n";
+    Eigen::Map<Vector>( y_p, n_) =   y;
 }
