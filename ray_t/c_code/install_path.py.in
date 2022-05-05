@@ -1,0 +1,2 @@
+c_interface_path = "@C_INTERFACE_INSTALL@"
+lib_name = "@lib_filename@"
