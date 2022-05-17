@@ -10,8 +10,7 @@ def test_cosine():
     x = np.linspace(0,1,7)
 
     y = ci.cos(x)
-
-
+    
     ck = np.cos(x)
 
     assert np.allclose(y,ck)
