@@ -1,12 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-from context import ray_t
+from context import pkg
 
-import ray_t.c_interface as ci
-
-
-
+import pkg.c_interface as ci
 
 def test_cosine():
 
@@ -14,8 +11,6 @@ def test_cosine():
 
     y = ci.cos(x)
 
-    #plt.plot(x,y)
-    #plt.show()
 
     ck = np.cos(x)
 

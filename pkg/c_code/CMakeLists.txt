@@ -14,7 +14,7 @@ find_package (Eigen3 3.3 REQUIRED NO_MODULE)
 
 include_directories ( "${EIGEN3_INCLUDE_DIR}" )
 
-add_library(c_interface SHARED ray_tracing.cpp)
+add_library(c_interface SHARED local_tools.cpp)
 
 set_target_properties(c_interface PROPERTIES OUTPUT_NAME "c_interface")
 set_target_properties(c_interface PROPERTIES SUFFIX ".so")
